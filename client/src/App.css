@@ -1,0 +1,434 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Authentication */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #edf4ff, #f8faff);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(30, 55, 90, 0.08);
+}
+
+.auth-card h1 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.auth-card > p {
+  color: #778196;
+  margin-bottom: 25px;
+}
+
+.auth-card form,
+.transfer-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-card label,
+.transfer-card label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.auth-card input,
+.transfer-card input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #dce3ed;
+  border-radius: 10px;
+  outline: none;
+  background: #fbfcfe;
+}
+
+.auth-card input:focus,
+.transfer-card input:focus {
+  border-color: #3978e8;
+  box-shadow: 0 0 0 3px rgba(57, 120, 232, 0.1);
+}
+
+.auth-card form button,
+.transfer-card form button {
+  border: none;
+  background: #2463d3;
+  color: white;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.auth-card form button:hover,
+.transfer-card form button:hover {
+  background: #174eaf;
+}
+
+.auth-switch {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #778196;
+  text-align: center;
+}
+
+.auth-switch button {
+  background: none;
+  border: none;
+  color: #2463d3;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+/* Dashboard */
+
+.dashboard {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 35px 24px 60px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 16px;
+}
+
+.dashboard-header h1 {
+  font-size: 27px;
+  letter-spacing: -0.5px;
+}
+
+.dashboard-header p {
+  color: #7a8599;
+  margin-top: 6px;
+}
+
+.logout-btn {
+  border: 1px solid #dce3ed;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 9px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background: #f0f4fa;
+}
+
+/* Wallet */
+
+.balance-card {
+  background: linear-gradient(120deg, #245fc9, #4389ec);
+  color: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 12px 28px rgba(36, 95, 201, 0.17);
+}
+
+.balance-card p {
+  color: #e1ecff;
+  font-size: 14px;
+}
+
+.balance-card h2 {
+  font-size: 42px;
+  margin: 12px 0;
+  letter-spacing: -1px;
+}
+
+.balance-card button {
+  background: white;
+  color: #245fc9;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.balance-card button:hover {
+  background: #eaf1ff;
+}
+
+/* Transfer */
+
+.transfer-card {
+  background: white;
+  padding: 28px;
+  border: 1px solid #e9edf4;
+  border-radius: 18px;
+  margin-bottom: 28px;
+  box-shadow: 0 5px 20px rgba(30, 55, 90, 0.035);
+}
+
+.transfer-card h2,
+.transactions-section h2 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.transfer-card > p {
+  color: #8490a3;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.transfer-card form {
+  max-width: 520px;
+}
+
+.transfer-success {
+  color: #16834b;
+  background: #eaf8f0;
+  padding: 13px;
+  border-radius: 9px;
+  margin-top: 18px;
+  overflow-wrap: anywhere;
+}
+
+.transfer-error {
+  color: #c03939;
+  background: #fff0f0;
+  padding: 13px;
+  border-radius: 9px;
+  margin-top: 18px;
+}
+
+.message {
+  background: #fff7e6;
+  color: #92620c;
+  padding: 12px 15px;
+  border-radius: 9px;
+  margin-bottom: 20px;
+}
+
+/* Transaction history */
+
+.transactions-section {
+  background: white;
+  border: 1px solid #e9edf4;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 5px 20px rgba(30, 55, 90, 0.035);
+}
+
+.transactions-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.transactions-heading span {
+  font-size: 13px;
+  color: #7b879a;
+  background: #f1f4f9;
+  padding: 7px 12px;
+  border-radius: 20px;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-item {
+  border-top: 1px solid #edf0f5;
+  padding: 20px 0;
+}
+
+.transaction-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.transaction-main p {
+  color: #778196;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.transaction-main small {
+  display: block;
+  color: #9aa4b4;
+  margin-top: 7px;
+}
+
+.transaction-main > div:last-child {
+  text-align: right;
+}
+
+.amount-outgoing {
+  color: #d84c4c;
+}
+
+.amount-incoming {
+  color: #15965a;
+}
+
+.details-btn {
+  display: block;
+  margin: 8px 0 0 auto;
+  padding: 7px 10px;
+  background: #edf4ff;
+  color: #2463d3;
+  border: none;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.details-btn:hover {
+  background: #dceaff;
+}
+
+.transaction-details {
+  background: #f7f9fc;
+  padding: 18px;
+  border-radius: 10px;
+  margin-top: 16px;
+  overflow-wrap: anywhere;
+}
+
+.transaction-details h3 {
+  font-size: 16px;
+  margin-bottom: 13px;
+}
+
+.transaction-details p {
+  font-size: 13px;
+  color: #647086;
+  margin: 9px 0;
+  line-height: 1.5;
+}
+
+.transaction-details strong {
+  color: #25334a;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 22px 15px 40px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 21px;
+  }
+
+  .balance-card {
+    padding: 24px;
+  }
+
+  .balance-card h2 {
+    font-size: 34px;
+  }
+
+  .transfer-card,
+  .transactions-section {
+    padding: 20px;
+  }
+
+  .transaction-main {
+    align-items: flex-start;
+  }
+
+  .transaction-main > div:last-child {
+    min-width: 95px;
+  }
+
+  .auth-card {
+    padding: 27px;
+  }
+  
+.transaction-search {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #dce3ed;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 15px;
+  background: #fbfcfe;
+}
+
+.transaction-search:focus {
+  border-color: #3978e8;
+  box-shadow: 0 0 0 3px rgba(57, 120, 232, 0.1);
+}
+
+.transaction-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.transaction-filters button {
+  padding: 9px 18px;
+  border: 1px solid #dce3ed;
+  border-radius: 20px;
+  background: white;
+  color: #647086;
+  font-weight: 600;
+}
+
+.transaction-filters button.active {
+  background: #2463d3;
+  color: white;
+  border-color: #2463d3;
+}
+
+.no-transactions {
+  color: #8490a3;
+  padding: 25px 0;
+  text-align: center;
+}
+
+}
